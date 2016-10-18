@@ -1,0 +1,6 @@
+use_frameworks!
+target 'IOTScanner_Tests' do
+  pod 'IOTScanner', :path => '../'
+  
+  
+end
