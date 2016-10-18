@@ -49,25 +49,27 @@ static NSString* const deviceIDKey = @"deviceID";
 {
     NSDictionary *properties = [ChBeaconReader getBeaconDataFrom:advertisementData];
 
-    if ([properties count] == 2) {
-        CHThing *foundThing = [[CHThing alloc ] initWithDeviceID:[properties valueForKey:deviceIDKey]
-                                                       foundRSSI:[RSSI doubleValue]
-                                                      andTxPower:(int)[properties valueForKey:txPowerKey]];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        if ([properties count] == 2) {
+            CHThing *foundThing = [[CHThing alloc ] initWithDeviceID:[properties valueForKey:deviceIDKey]
+                                                           foundRSSI:[RSSI doubleValue]
+                                                          andTxPower:(int)[properties valueForKey:txPowerKey]];
 
-        if (_outOfRangeTimer == nil) {
-            _outOfRangeTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                                target:self
-                                                              selector:@selector(checkIfItemShouldBeRemoved)
-                                                              userInfo:nil
-                                                               repeats:YES];
+            if (_outOfRangeTimer == nil) {
+                _outOfRangeTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                    target:self
+                                                                  selector:@selector(checkIfItemShouldBeRemoved)
+                                                                  userInfo:nil
+                                                                   repeats:YES];
+            }
+
+            if (![[_foundThings allKeys] containsObject:foundThing]) {
+                [_rangingDelegate foundThing:foundThing];
+            }
+
+            [_foundThings setObject:[[NSDate alloc] init] forKey: foundThing];
         }
-
-        if (![[_foundThings allKeys] containsObject:foundThing]) {
-            [_rangingDelegate foundThing:foundThing];
-        }
-
-        [_foundThings setObject:[[NSDate alloc] init] forKey: foundThing];
-    }
+    });
 }
 
 - (void)checkIfItemShouldBeRemoved
