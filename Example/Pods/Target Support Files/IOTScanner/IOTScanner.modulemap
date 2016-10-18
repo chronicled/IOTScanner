@@ -1,0 +1,6 @@
+framework module IOTScanner {
+  umbrella header "IOTScanner-umbrella.h"
+
+  export *
+  module * { export * }
+}

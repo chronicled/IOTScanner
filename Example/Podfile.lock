@@ -1,0 +1,14 @@
+PODS:
+  - IOTScanner (0.1.0)
+
+DEPENDENCIES:
+  - IOTScanner (from `../`)
+
+EXTERNAL SOURCES:
+  IOTScanner:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IOTScanner: 25188b711470c2bc098a4dd842217f5f003ef463
+
+COCOAPODS: 0.39.0
