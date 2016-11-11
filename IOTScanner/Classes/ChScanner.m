@@ -23,6 +23,8 @@ static NSString* const deviceIDKey = @"deviceID";
 
     if (self) {
         _foundThings = [[NSMutableDictionary alloc] init];
+        _foundThingsLock = [[NSLock alloc] init];
+
         _centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
         _rangingDelegate = delegate;
 
@@ -47,9 +49,9 @@ static NSString* const deviceIDKey = @"deviceID";
      advertisementData:(NSDictionary *)advertisementData
                   RSSI:(NSNumber *)RSSI
 {
-    NSDictionary *properties = [ChBeaconReader getBeaconDataFrom:advertisementData];
-
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSDictionary *properties = [ChBeaconReader getBeaconDataFrom:advertisementData];
+
         if ([properties count] == 2) {
             CHThing *foundThing = [[CHThing alloc ] initWithDeviceID:[properties valueForKey:deviceIDKey]
                                                            foundRSSI:[RSSI doubleValue]
@@ -63,11 +65,15 @@ static NSString* const deviceIDKey = @"deviceID";
                                                                    repeats:YES];
             }
 
+            [self.foundThingsLock lock];
+
             if (![[_foundThings allKeys] containsObject:foundThing]) {
                 [_rangingDelegate foundThing:foundThing];
             }
 
             [_foundThings setObject:[[NSDate alloc] init] forKey: foundThing];
+
+            [self.foundThingsLock unlock];
         }
     });
 }
