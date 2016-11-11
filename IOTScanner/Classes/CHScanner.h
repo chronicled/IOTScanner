@@ -23,7 +23,8 @@
 /*! @returns whether or not IOTScanner is currently scanning for beacons */
 @property (nonatomic) BOOL isScanning;
 @property (nonatomic) id<CHThingRangingDelegate> rangingDelegate;
-@property (strong, nonatomic) NSMutableDictionary *foundThings;
+@property (strong, atomic) NSMutableDictionary *foundThings;
+@property (strong, atomic) NSLock *foundThingsLock;
 @property (nonatomic) NSTimer *outOfRangeTimer;
 
 /*! Creates an instance of an IOTScanner
