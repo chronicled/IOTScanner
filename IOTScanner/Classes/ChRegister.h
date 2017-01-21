@@ -9,8 +9,8 @@
 @property(strong, nonnull) CBUUID* serviceUUID;
 @property(strong, nonnull) CBUUID* characteristicUUID;
 
-+ (instancetype __nonnull) publicKey;
-+ (instancetype __nonnull) lockState;
++ (CHRegister * _Nonnull) publicKey;
++ (CHRegister * _Nonnull) lockState;
 
 @end
 

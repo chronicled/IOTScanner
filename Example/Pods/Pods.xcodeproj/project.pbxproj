@@ -13,6 +13,15 @@
 		5D3CB90E1EAE15E5BF9D5ECA5B703948 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		ACC2C568914345775937389416606654 /* Pods-IOTScanner_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 797F469066B47DC3ADD64A5534077217 /* Pods-IOTScanner_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F21F4E68B207596F7F7E57D1CC3BEE2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		FC81033F1E33E6EE00CF29BF /* NSData+hexadecimalString.m in Sources */ = {isa = PBXBuildFile; fileRef = FC81033E1E33E6EE00CF29BF /* NSData+hexadecimalString.m */; };
+		FC8103431E354C4B00CF29BF /* CHWriteInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8103421E354C4B00CF29BF /* CHWriteInteraction.m */; };
+		FC8103471E3676C600CF29BF /* IOTScannerError.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8103461E3676C600CF29BF /* IOTScannerError.m */; };
+		FC8103481E36864500CF29BF /* CHWriteInteraction.h in Headers */ = {isa = PBXBuildFile; fileRef = FC8103441E354C6600CF29BF /* CHWriteInteraction.h */; };
+		FC8103491E36864F00CF29BF /* IOTScannerError.h in Headers */ = {isa = PBXBuildFile; fileRef = FC8103451E3676AD00CF29BF /* IOTScannerError.h */; };
+		FC81034A1E36868100CF29BF /* CHReadInteraction.h in Headers */ = {isa = PBXBuildFile; fileRef = FCBB655F1E3182F700485F6B /* CHReadInteraction.h */; };
+		FC81034B1E36868C00CF29BF /* NSData+hexadecimalString.h in Headers */ = {isa = PBXBuildFile; fileRef = FC81033D1E33E6D400CF29BF /* NSData+hexadecimalString.h */; };
+		FCBB655A1E3180D000485F6B /* CHInteraction.h in Headers */ = {isa = PBXBuildFile; fileRef = FCBB65591E3180D000485F6B /* CHInteraction.h */; };
+		FCBB655E1E3182DB00485F6B /* CHReadInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBB655D1E3182DB00485F6B /* CHReadInteraction.m */; };
 		FCD238C91DB68D6B00C5C84E /* CHBeaconReader.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD238BE1DB68D6B00C5C84E /* CHBeaconReader.h */; };
 		FCD238CA1DB68D6B00C5C84E /* CHBeaconReader.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD238BF1DB68D6B00C5C84E /* CHBeaconReader.m */; };
 		FCD238CB1DB68D6B00C5C84E /* CHReadCache.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD238C01DB68D6B00C5C84E /* CHReadCache.h */; };
@@ -57,6 +66,15 @@
 		D3B0F10857A2F4C665586CE3662F6743 /* IOTScanner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IOTScanner-dummy.m"; sourceTree = "<group>"; };
 		F41BD6842EF9066755861C1A3ACB981E /* Pods-IOTScanner_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IOTScanner_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F97AC795659FDCD3E8063BC8C3246182 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC81033D1E33E6D400CF29BF /* NSData+hexadecimalString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+hexadecimalString.h"; sourceTree = "<group>"; };
+		FC81033E1E33E6EE00CF29BF /* NSData+hexadecimalString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+hexadecimalString.m"; sourceTree = "<group>"; };
+		FC8103421E354C4B00CF29BF /* CHWriteInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHWriteInteraction.m; sourceTree = "<group>"; };
+		FC8103441E354C6600CF29BF /* CHWriteInteraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHWriteInteraction.h; sourceTree = "<group>"; };
+		FC8103451E3676AD00CF29BF /* IOTScannerError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOTScannerError.h; sourceTree = "<group>"; };
+		FC8103461E3676C600CF29BF /* IOTScannerError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOTScannerError.m; sourceTree = "<group>"; };
+		FCBB65591E3180D000485F6B /* CHInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHInteraction.h; sourceTree = "<group>"; };
+		FCBB655D1E3182DB00485F6B /* CHReadInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHReadInteraction.m; sourceTree = "<group>"; };
+		FCBB655F1E3182F700485F6B /* CHReadInteraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHReadInteraction.h; sourceTree = "<group>"; };
 		FCD238BE1DB68D6B00C5C84E /* CHBeaconReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBeaconReader.h; sourceTree = "<group>"; };
 		FCD238BF1DB68D6B00C5C84E /* CHBeaconReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBeaconReader.m; sourceTree = "<group>"; };
 		FCD238C01DB68D6B00C5C84E /* CHReadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHReadCache.h; sourceTree = "<group>"; };
@@ -197,6 +215,15 @@
 				FCD238C61DB68D6B00C5C84E /* CHThing.h */,
 				FCD238C71DB68D6B00C5C84E /* CHThing.m */,
 				FCD238C81DB68D6B00C5C84E /* CHThingRangingDelegate.h */,
+				FCBB65591E3180D000485F6B /* CHInteraction.h */,
+				FCBB655D1E3182DB00485F6B /* CHReadInteraction.m */,
+				FCBB655F1E3182F700485F6B /* CHReadInteraction.h */,
+				FC8103421E354C4B00CF29BF /* CHWriteInteraction.m */,
+				FC8103441E354C6600CF29BF /* CHWriteInteraction.h */,
+				FC81033D1E33E6D400CF29BF /* NSData+hexadecimalString.h */,
+				FC81033E1E33E6EE00CF29BF /* NSData+hexadecimalString.m */,
+				FC8103451E3676AD00CF29BF /* IOTScannerError.h */,
+				FC8103461E3676C600CF29BF /* IOTScannerError.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -226,11 +253,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCD238C91DB68D6B00C5C84E /* CHBeaconReader.h in Headers */,
+				FC8103491E36864F00CF29BF /* IOTScannerError.h in Headers */,
 				FCD238CF1DB68D6B00C5C84E /* CHScanner.h in Headers */,
 				FCD238D31DB68D6B00C5C84E /* CHThingRangingDelegate.h in Headers */,
+				FCBB655A1E3180D000485F6B /* CHInteraction.h in Headers */,
+				FC81034A1E36868100CF29BF /* CHReadInteraction.h in Headers */,
 				FCD238D11DB68D6B00C5C84E /* CHThing.h in Headers */,
 				FCD238CB1DB68D6B00C5C84E /* CHReadCache.h in Headers */,
 				FCD238CD1DB68D6B00C5C84E /* ChRegister.h in Headers */,
+				FC8103481E36864500CF29BF /* CHWriteInteraction.h in Headers */,
+				FC81034B1E36868C00CF29BF /* NSData+hexadecimalString.h in Headers */,
 				531A1EF342A38C5496F7737211CDF1E4 /* IOTScanner-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,9 +348,13 @@
 				FCD238D01DB68D6B00C5C84E /* ChScanner.m in Sources */,
 				280A3135584844C7C49DCC903B368216 /* IOTScanner-dummy.m in Sources */,
 				FCD238CC1DB68D6B00C5C84E /* ChReadCache.m in Sources */,
+				FCBB655E1E3182DB00485F6B /* CHReadInteraction.m in Sources */,
 				FCD238CA1DB68D6B00C5C84E /* CHBeaconReader.m in Sources */,
+				FC8103431E354C4B00CF29BF /* CHWriteInteraction.m in Sources */,
+				FC8103471E3676C600CF29BF /* IOTScannerError.m in Sources */,
 				FCD238CE1DB68D6B00C5C84E /* ChRegister.m in Sources */,
 				FCD238D21DB68D6B00C5C84E /* CHThing.m in Sources */,
+				FC81033F1E33E6EE00CF29BF /* NSData+hexadecimalString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

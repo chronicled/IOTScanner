@@ -2,14 +2,21 @@
 #import "CHThing.h"
 #import "ChReadCache.h"
 #import "CHRegister.h"
+#import "CHScanner.h"
+#import "CHReadInteraction.h"
+#import "CHWriteInteraction.h"
 
 @implementation CHThing : NSObject
 
 @synthesize deviceID;
 @synthesize txPower;
 @synthesize foundRSSI;
+@synthesize peripheralUUID;
 
-- (instancetype __nonnull)initWithDeviceID:(NSString *)ID foundRSSI:(double)rssi andTxPower:(int)tx
+- (instancetype __nonnull)initWithDeviceID:(NSString *)ID
+                                 foundRSSI:(double)rssi
+                            peripheralUUID:(NSUUID *)uuid
+                                andTxPower:(int)tx
 {
     self = [super init];
 
@@ -17,9 +24,29 @@
         self.deviceID = ID;
         self.txPower = tx;
         self.foundRSSI = rssi;
+        self.peripheralUUID = uuid;
     }
 
     return self;
+}
+
+- (void)read:(CHRegister *__nonnull)reg cb:(_Nonnull ThingResponseCallback)cb
+{
+    CHReadInteraction *interaction = [[CHReadInteraction alloc] initWithRegister:reg
+                                                                  peripheralUUID:self.peripheralUUID
+                                                                              cb:cb];
+    [[CHScanner sharedInstance] addInteraction:interaction];
+}
+
+- (void)write:(CHRegister * __nonnull)reg
+  dataToWrite:(NSData * __nonnull)data
+           cb:(_Nonnull ThingResponseCallback)cb
+{
+    CHWriteInteraction *interaction = [[CHWriteInteraction alloc] initWithRegister:reg
+                                                                    peripheralUUID:self.peripheralUUID
+                                                                       dataToWrite:data
+                                                                                cb:cb];
+    [[CHScanner sharedInstance] addInteraction:interaction];
 }
 
 - (id)copyWithZone:(NSZone *)zone
