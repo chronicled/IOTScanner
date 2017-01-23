@@ -18,6 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
+Library allowing you to discover, read from, and write to Chronicled
+Beacons
                        DESC
 
   s.homepage         = 'https://github.com/chronicled/IOTScanner'
@@ -25,7 +27,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Dylan' => 'dylan@chronicled.com' }
   s.source           = { :git => 'https://github.com/chronicled/IOTScanner.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'IOTScanner/Classes/**/*'
 

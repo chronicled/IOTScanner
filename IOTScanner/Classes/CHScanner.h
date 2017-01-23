@@ -16,8 +16,6 @@
 @interface CHScanner : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 {
 @private BOOL shouldStartScanning;
-@private NSMutableArray * foundPeripherals;
-@private NSMutableDictionary * currentInteractions;
 }
 
 /**
