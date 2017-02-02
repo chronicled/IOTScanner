@@ -8,6 +8,8 @@ static CBUUID *settingsService = nil;
 #pragma MARK Characteristics
 static CBUUID *publicKeyChar = nil;
 static CBUUID *lockStateChar = nil;
+static CBUUID *challengeChar = nil;
+static CBUUID *signatureChar = nil;
 
 @implementation CHRegister
 
@@ -20,6 +22,8 @@ static CBUUID *lockStateChar = nil;
 
     publicKeyChar = [CBUUID UUIDWithString:@"6D61B943-C354-42C6-BCA8-2B56BD2473EA"];
     lockStateChar = [CBUUID UUIDWithString:@"A3C87506-8ED3-4BDF-8A39-A01BEBEDE295"];
+    challengeChar = [CBUUID UUIDWithString:@"448BF545-62FB-4502-AF96-B7B541CB749C"];
+    signatureChar = [CBUUID UUIDWithString:@"FCF32AC0-93F6-46C3-9462-416B631E1367"];
 }
 
 - (instancetype __nonnull)initWithService:(CBUUID*)service andCharacteristic:(CBUUID*)ch
@@ -42,6 +46,18 @@ static CBUUID *lockStateChar = nil;
 {
     return [[CHRegister alloc] initWithService:settingsService
                              andCharacteristic:lockStateChar];
+}
+
++ (CHRegister * _Nonnull) challenge
+{
+    return [[CHRegister alloc] initWithService:authService
+                             andCharacteristic:challengeChar];
+}
+
++ (CHRegister * _Nonnull) signature
+{
+    return [[CHRegister alloc] initWithService:authService
+                             andCharacteristic:signatureChar];
 }
 
 @end
