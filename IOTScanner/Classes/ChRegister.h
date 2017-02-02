@@ -11,6 +11,8 @@
 
 + (CHRegister * _Nonnull) publicKey;
 + (CHRegister * _Nonnull) lockState;
++ (CHRegister * _Nonnull) challenge;
++ (CHRegister * _Nonnull) signature;
 
 @end
 

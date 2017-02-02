@@ -9,6 +9,8 @@
 
 @property (nonatomic, retain) NSUUID *_Nonnull peripheralUUID;
 
+@property (nonatomic, retain) NSData *_Nonnull dataToWrite;
+
 @property (nonatomic, copy) _Nonnull ThingResponseCallback callback;
 
 - (id __nonnull) initWithRegister:(CHRegister * __nonnull)reg
